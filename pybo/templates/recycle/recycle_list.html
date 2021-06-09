@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RECYCLE</title>
+    <script type='text/javascript'>
+        $(document).ready(function() {
+            $(".page-link").on('click', function() {
+                $("#page").val($(this).data("page"));
+                $("#searchForm").submit();
+            });
+            $("#btn_search).on('click', function() {
+                $("#kw").val($(".kw").val());
+                $("#page").val(1);
+                $("#searchForm").submit();
+            });
+        });
+    </script>
+    <style>
+        .nav-link {
+      color: black;
+    }
+    </style>
+</head>
+<link rel="stylesheet" href="../../static/vendor/bootstrap/css/bootstrap.min.css" >
+<body>
+    <nav class="navbar fixed-top navbar-expand-sm bg-white navbar-white">
+    <!-- Brand -->
+    <div class="col-lg-4">
+    <a class="navbar-brand" href="/"  style="padding-left: 50px;">
+      <img src="../../static/img/logoG.png" width="45px" height="40px">
+      <img src="../../static/img/logoG.png" width="45px" height="40px">
+    </a>
+  </div>
+    <!-- Links -->
+    <ul class="navbar-nav">
+      <!-- Dropdown -->
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          분리배출요령
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="paper">종이류, 종이팩</a>
+          <a class="dropdown-item" href="can">금속캔, 고철</a>
+          <a class="dropdown-item" href="glass">유리병류</a>
+          <a class="dropdown-item" href="plastic">플라스틱 용기류</a>
+          <a class="dropdown-item" href="vinyl">비닐류</a>
+          <a class="dropdown-item" href="styrofoam">스티로폼(발포합성수지)</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="search" style="padding-left: 50px;">품목 검색</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="padding-left: 50px;">Q & A</a>
+      </li>
+    </ul>
+  </nav>
+    <br><br><br>
+
+    <div class="container my-3">
+
+        <!-- 검색기능-->
+        <div class="row justify-content-end my-3">
+            <div class="col-4 input-group">
+              <input type="text" class="form-control kw" value="{{ kw or ''}}" placeholder="폐기물 이름 입력">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="submit" id="btn_search">검색</button>
+                </div>
+            </div>
+        </div>
+
+        <table class="table">
+            <thead>
+            <tr class="thead-dark">
+                <th>품목</th>
+                <th>구분</th>
+                <th>배출방법</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% if recycle_list %}
+            {% for recycle in recycle_list.items %}
+            <tr>
+                <td>{{ recycle.item }}</td>
+                <td>{{ recycle.division }}</td>
+                <td>{{ recycle.exhaust }}</td>
+            </tr>
+            {% endfor %}
+            {% else %}
+            <tr>
+                <td colspan="3">폐기물이 없습니다.</td>
+            </tr>
+            {% endif %}
+            </tbody>
+        </table>
+
+        <!-- 페이징 처리 시작 -->
+        <ul class="pagination justify-content-center">
+            <!-- 이전 페이지 -->
+            {% if recycle_list.has_prev %}
+            <li class="page-item">
+                <a class="page-link" data-page="{{ recycle_list.prev_num }}" href="#">이전</a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+                <a class="page-link" tabindex="-1" aria-disabled="true" href="#">이전</a>
+            </li>
+            {% endif %}
+            {% for page_num in recycle_list.iter_pages() %}
+                {% if page_num %}
+                    {% if page_num != recycle_list.page %}
+                    <li class="page-item">
+                        <a class="page-link" data-page="{{ page_num }}" href="#">{{ page_num }}</a>
+                    </li>
+                    {% else %}
+                    <li class="page-item active" aria-current="page">
+                        <a class="page-link" href="#">{{ page_num }}</a>
+                    </li>
+                    {% endif %}
+                {% else %}
+                    <li class="disabled">
+                        <a class="page-link" href="#">...</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+            <!-- 다음 페이지 -->
+            {% if recycle_list.has_next %}
+            <li class="page-item">
+                <a class="page-link" data-page="{{ recycle_list.next_num }}" href="#">다음</a>
+            </li>
+            {% endif %}
+        </ul>
+    </div>
+    <!--검색기능-->
+    <form id="searchForm" method="get" action="{{ url_for('recycle._list') }}">
+        <input type="hidden" id="kw" name="kw" value="{{ kw or '' }}">
+        <input type="hidden" id="page" name="page" value="{{ page }}">
+    </form>
+
+</body>
+</html>

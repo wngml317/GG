@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>RECYCLE</title>
+
+  <style>
+    .nav-link {
+      color: black;
+    }
+  </style>
+  <!-- Bootstrap core CSS -->
+  <link href="../../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="../../static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="../../static/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+  <!-- Custom styles for this template -->
+  <link href="../../static/css/landing-page.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-sm bg-white navbar-white">
+    <!-- Brand -->
+    <div class="col-lg-4">
+    <a class="navbar-brand" href="/"  style="padding-left: 50px;">
+      <img src="../../static/img/logoG.png" width="45px" height="40px">
+      <img src="../../static/img/logoG.png" width="45px" height="40px">
+    </a>
+  </div>
+    <!-- Links -->
+    <ul class="navbar-nav">
+      <!-- Dropdown -->
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          분리배출요령
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="paper">종이류, 종이팩</a>
+          <a class="dropdown-item" href="can">금속캔, 고철</a>
+          <a class="dropdown-item" href="glass">유리병류</a>
+          <a class="dropdown-item" href="plastic">플라스틱 용기류</a>
+          <a class="dropdown-item" href="vinyl">비닐류</a>
+          <a class="dropdown-item" href="styrofoam">스티로폼(발포합성수지)</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="search" style="padding-left: 50px;">품목 검색</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="padding-left: 50px;">Q & A</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Masthead -->
+  <header class="masthead text-white text-center">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <h1 class="mb-5">올바른 분리배출</h1>
+        </div>
+        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+          <form>
+            <div class="form-row">
+              <div class="col-12 col-md-9 mb-2 mb-md-0">
+                <input type="text" class="form-control form-control-lg" value="{{ kw or ''}}" placeholder="폐기물 이름 검색">
+              </div>
+              <div class="col-12 col-md-3">
+                <button type="submit" class="btn btn-lg btn-primary" id="btn_search"><i class="	fas fa-search"></i></button>
+                <button type="submit" class="btn btn-lg btn-primary"><i class="fas fa-camera"></i></button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Icons Grid -->
+  <section class="features-icons bg-light text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+            <a href="paper">
+              <div class="features-icons-icon d-flex" style="padding-left : 100px">
+                <img src="../../static/img/paper.png"></img>
+              </div></a>
+            <br><br><h3>종이류, 종이팩</h3><br><br>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+            <a href="can">
+              <div class="features-icons-icon d-flex" style="padding-left : 100px">
+                <img src="../../static/img/can.png"></img>
+            </div></a>
+            <br><br><h3>금속캔, 고철</h3><br><br>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+            <a href="glass">
+              <div class="features-icons-icon d-flex" style="padding-left : 100px">
+               <img src="../../static/img/glass.png"></img>
+              </div></a>
+            <br><br><h3>유리병류</h3><br><br>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+            <a href="plastic">
+            <div class="features-icons-icon d-flex" style="padding-left : 100px">
+                <img src="../../static/img/plastic.png"></img>
+            </div></a>
+            <br><br><h3>플라스틱 용기류</h3><br><br>
+          </div>
+        </div><div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+            <a href="vinyl">
+            <div class="features-icons-icon d-flex" style="padding-left : 100px">
+                <img src="../../static/img/vinyl.png"></img>
+            </div></a>
+            <br><br><h3>비닐류</h3><br><br>
+          </div>
+        </div><div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+            <a href="styrofoam">
+            <div class="features-icons-icon d-flex" style="padding-left : 100px">
+                <img src="../../static/img/styrofoam.png"></img>
+            </div></a>
+            <br><br><h3>스티로폼(발포합성수지)</h3><br><br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+          <ul class="list-inline mb-2">
+            <li class="list-inline-item">
+              <a href="#">About</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Contact</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Terms of Use</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Privacy Policy</a>
+            </li>
+          </ul>
+          <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2020. All Rights Reserved.</p>
+        </div>
+        <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item mr-3">
+              <a href="#">
+                <i class="fab fa-facebook fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item mr-3">
+              <a href="#">
+                <i class="fab fa-twitter-square fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fab fa-instagram fa-2x fa-fw"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="../../static/vendor/jquery/jquery.min.js"></script>
+  <script src="../../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body></html>
