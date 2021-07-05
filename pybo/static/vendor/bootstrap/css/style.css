@@ -1,0 +1,18 @@
+.r {
+        margin: 5px;
+        width: 170px; height: 40px;
+        text-align: center;
+        display: inline-block; border: 3px solid #1EA4FF;
+    }
+
+.features-icons-icon:hover {
+        transform:scale(1.7);
+    }
+
+.nav-link {
+      color: black;
+    }
+
+.block {
+        text-align:center;
+    }
