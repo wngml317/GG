@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request
 
 from pybo.models import Recycle
+from pybo.models import Question
 from .. import db
 
 bp = Blueprint('recycle', __name__, url_prefix='/recycle')

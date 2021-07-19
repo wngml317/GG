@@ -16,3 +16,8 @@ def index():
 @bp.route('/list')
 def list():
     return redirect(url_for('recycle._list'))
+
+
+@bp.route('/question')
+def question():
+    return redirect(url_for('question._list'))

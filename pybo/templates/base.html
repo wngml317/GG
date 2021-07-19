@@ -1,10 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>RECYCLE</title>
+
+
+  <!-- Bootstrap core CSS -->
+  <link href="../../../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="../../../static/vendor/bootstrap/css/style.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="../../../static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="../../../static/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+  <!-- Custom styles for this template -->
+  <link href="../../../static/css/landing-page.min.css" rel="stylesheet">
+
 </head>
+
 <body>
-$END$
+{% block content %}
+  <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-sm bg-white navbar-white">
+    <!-- Brand -->
+    <div class="col-lg-4">
+    <a class="navbar-brand" href="/"  style="padding-left: 50px;">
+      <img src="../../../static/img/logoG.png" width="45px" height="40px">
+      <img src="../../../static/img/logoG.png" width="45px" height="40px">
+    </a>
+  </div>
+    <!-- Links -->
+    <ul class="navbar-nav">
+      <!-- Dropdown -->
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          분리배출요령
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="paper">종이류, 종이팩</a>
+          <a class="dropdown-item" href="can">금속캔, 고철</a>
+          <a class="dropdown-item" href="glass">유리병류</a>
+          <a class="dropdown-item" href="plastic">플라스틱 용기류</a>
+          <a class="dropdown-item" href="vinyl">비닐류</a>
+          <a class="dropdown-item" href="styrofoam">스티로폼(발포합성수지)</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="search" style="padding-left: 50px;">품목 검색</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="padding-left: 50px;">Q & A</a>
+      </li>
+    </ul>
+  </nav>
+{% endblock %}
 </body>
 </html>
